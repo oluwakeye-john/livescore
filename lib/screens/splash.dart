@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sport_app/layout.dart';
 import 'package:sport_app/utils/responsive.dart';
 import 'package:sport_app/widgets/button.dart';
 import './login.dart';
@@ -6,16 +7,10 @@ import './login.dart';
 class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    ThemeData theme = Theme.of(context);
-    return (Scaffold(
-      backgroundColor: theme.backgroundColor,
-      body: SafeArea(
-          child: Container(
-        padding: EdgeInsets.only(left: 20, right: 20, top: 20),
-        child: Column(
-          children: [SplashImage(), SplashContent(), SplashButtons()],
-        ),
-      )),
+    return (AppLayout(
+      child: Column(
+        children: [SplashImage(), SplashContent(), SplashButtons()],
+      ),
     ));
   }
 }
