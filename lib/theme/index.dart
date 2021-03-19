@@ -15,6 +15,11 @@ ThemeData getTheme() {
             color: Colors.white,
             fontSize: 40,
           )),
+          headline3: GoogleFonts.sourceSansPro(
+              textStyle: TextStyle(
+                  color: Colors.white,
+                  fontSize: 28,
+                  fontWeight: FontWeight.w600)),
           caption: GoogleFonts.sourceSansPro(
               textStyle: TextStyle(color: Color(0xFF65656B), fontSize: 16))));
 }

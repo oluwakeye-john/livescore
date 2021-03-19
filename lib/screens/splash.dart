@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sport_app/utils/responsive.dart';
+import 'package:sport_app/widgets/button.dart';
+import './login.dart';
 
 class SplashScreen extends StatelessWidget {
   @override
@@ -85,15 +87,12 @@ class _Button1 extends StatelessWidget {
     return (Expanded(
         child: SizedBox(
             height: 60,
-            child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15))),
-                child: Text(
-                  "Sign in",
-                  style: TextStyle(fontSize: 16),
-                )))));
+            child: CustomButton(
+              onPress: () {
+                showLoginModal(context: context);
+              },
+              text: "Sign in",
+            ))));
   }
 }
 
