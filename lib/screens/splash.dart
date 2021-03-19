@@ -26,7 +26,7 @@ class SplashImage extends StatelessWidget {
     return Container(
       height: getResponsiveHeight(context: context, height: 50),
       padding: EdgeInsets.only(
-          bottom: getResponsiveHeight(context: context, height: 8)),
+          bottom: getResponsiveHeight(context: context, height: 10)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

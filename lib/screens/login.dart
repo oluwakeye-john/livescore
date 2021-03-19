@@ -18,9 +18,12 @@ showLoginModal({required BuildContext context}) {
               LoginTitle(),
               CustomInput(
                 text: "Email",
+                icon: Icons.email,
               ),
               CustomInput(
                 text: "Password",
+                icon: Icons.lock,
+                secure: true,
               ),
               LoginRemember(),
               LoginButton(),

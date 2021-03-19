@@ -6,8 +6,11 @@ int inputText = 0xFF65656B;
 
 class CustomInput extends StatelessWidget {
   final String text;
+  final IconData icon;
+  final bool secure;
 
-  CustomInput({required this.text});
+  CustomInput(
+      {required this.text, this.secure = false, this.icon = Icons.email});
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +19,11 @@ class CustomInput extends StatelessWidget {
       margin: EdgeInsets.only(
           bottom: getResponsiveHeight(context: context, height: 3)),
       child: TextField(
+        obscureText: secure,
         style: theme.textTheme.caption,
         decoration: InputDecoration(
             fillColor: Color(inputBg),
+            prefixIcon: Icon(icon),
             filled: true,
             hintText: text,
             contentPadding: EdgeInsets.all(22),
