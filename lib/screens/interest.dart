@@ -92,8 +92,7 @@ class _InterestItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    return (GestureDetector(
-      onTap: () {},
+    return (Container(
       child: Column(
         children: [
           SizedBox(
