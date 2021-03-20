@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sport_app/screens/interest.dart';
 import 'package:sport_app/screens/splash.dart';
 import 'package:sport_app/theme/index.dart';
 
@@ -14,7 +15,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.dark,
       theme: getTheme(),
-      home: SplashScreen(),
+      routes: {
+        "/": (_) => SplashScreen(),
+        "/interest": (_) => InterestScreen()
+      },
+      initialRoute: "/",
     ));
   }
 }

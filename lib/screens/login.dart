@@ -15,7 +15,7 @@ showLoginModal({required BuildContext context}) {
           color: Color(modalBg),
           child: Column(
             children: [
-              LoginTitle(),
+              _LoginTitle(),
               CustomInput(
                 text: "Email",
                 icon: Icons.email,
@@ -25,16 +25,16 @@ showLoginModal({required BuildContext context}) {
                 icon: Icons.lock,
                 secure: true,
               ),
-              LoginRemember(),
-              LoginButton(),
-              LoginBase()
+              _LoginRemember(),
+              _LoginButton(),
+              _LoginBase()
             ],
           ),
         );
       });
 }
 
-class LoginTitle extends StatelessWidget {
+class _LoginTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
@@ -45,14 +45,14 @@ class LoginTitle extends StatelessWidget {
         alignment: Alignment.centerLeft,
         child: Text(
           "Welcome",
-          style: theme.textTheme.headline3,
+          style: theme.textTheme.headline4,
         ),
       ),
     ));
   }
 }
 
-class LoginRemember extends StatelessWidget {
+class _LoginRemember extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
@@ -81,9 +81,13 @@ class LoginRemember extends StatelessWidget {
   }
 }
 
-class LoginButton extends StatelessWidget {
+class _LoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    handleLogin() {
+      Navigator.of(context).pushNamed('/interest');
+    }
+
     return (Container(
       margin: EdgeInsets.only(
           bottom: getResponsiveHeight(context: context, height: 3)),
@@ -92,7 +96,9 @@ class LoginButton extends StatelessWidget {
           Expanded(
               child: CustomButton(
             text: "Sign in",
-            onPress: () {},
+            onPress: () {
+              handleLogin();
+            },
           ))
         ],
       ),
@@ -100,7 +106,7 @@ class LoginButton extends StatelessWidget {
   }
 }
 
-class LoginBase extends StatelessWidget {
+class _LoginBase extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
