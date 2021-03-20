@@ -55,7 +55,9 @@ class CustomFlatButton extends StatelessWidget {
     return (SizedBox(
       height: getResponsiveHeight(context: context, height: 6.5),
       child: TextButton(
-          onPressed: () {},
+          onPressed: () {
+            onPress();
+          },
           child: Text(
             "Skip",
             style: theme.textTheme.subtitle2,

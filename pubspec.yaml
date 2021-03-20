@@ -46,12 +46,22 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/splash.png
+    - assets/hero.png
 
     - assets/interests/basketball.png
     - assets/interests/football.png
     - assets/interests/soccer.png
     - assets/interests/baseball.png
     - assets/interests/tennis.png
+
+    - assets/categories/badminton.png
+    - assets/categories/pingpong.png
+    - assets/categories/baseball.png
+    - assets/categories/basketball.png
+    - assets/categories/football.png
+    - assets/categories/soccer.png
+    - assets/categories/tennis.png
+    - assets/categories/volly.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

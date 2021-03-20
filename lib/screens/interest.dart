@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// ignore: import_of_legacy_library_into_null_safe
 import 'package:sport_app/layout.dart';
 import 'package:sport_app/models/interest.dart';
 import 'package:sport_app/utils/responsive.dart';
@@ -26,13 +25,16 @@ class _InterestTitle extends StatelessWidget {
     ThemeData theme = Theme.of(context);
     return (Container(
         margin: EdgeInsets.only(
+            top: getResponsiveHeight(context: context, height: 2),
             bottom: getResponsiveHeight(context: context, height: 2)),
         child: Align(
             alignment: Alignment.centerLeft,
-            child: Text(
-              "What sport do you interest?",
-              style: theme.textTheme.headline3,
-            ))));
+            child: SizedBox(
+                width: getResponsiveWidth(context: context, width: 65),
+                child: Text(
+                  "What sport do you interest?",
+                  style: theme.textTheme.headline3,
+                )))));
   }
 }
 
@@ -52,18 +54,21 @@ class _InterestSubtitle extends StatelessWidget {
   }
 }
 
-List<Interest> interests = [
-  Interest(name: "Soccer", imagePath: "assets/interests/soccer.png"),
-  Interest(name: "Basketball", imagePath: "assets/interests/basketball.png"),
-  Interest(name: "Football", imagePath: "assets/interests/football.png"),
-  Interest(name: "Baseball", imagePath: "assets/interests/baseball.png"),
-  Interest(name: "Tennis", imagePath: "assets/interests/tennis.png"),
-  Interest(name: "Volleyball", imagePath: "assets/interests/basketball.png"),
-];
+List<Interest> getInterests() {
+  return ([
+    Interest(name: "Soccer", imagePath: "assets/interests/soccer.png"),
+    Interest(name: "Basketball", imagePath: "assets/interests/basketball.png"),
+    Interest(name: "Football", imagePath: "assets/interests/football.png"),
+    Interest(name: "Baseball", imagePath: "assets/interests/baseball.png"),
+    Interest(name: "Tennis", imagePath: "assets/interests/tennis.png"),
+    Interest(name: "Volleyball", imagePath: "assets/interests/basketball.png"),
+  ]);
+}
 
 class _InterestList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    List<Interest> interests = getInterests();
     return (Expanded(
       child: Container(
         margin: EdgeInsets.only(
@@ -116,17 +121,25 @@ class _InterestItem extends StatelessWidget {
 class _InterestButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    handleContinue() {
+      Navigator.of(context).pushNamed('/home');
+    }
+
     return (Column(
       children: [
         ExpandedWidth(
             child: CustomButton(
-          onPress: () {},
+          onPress: () {
+            handleContinue();
+          },
           text: "Continue",
         )),
         ExpandedWidth(
             child: CustomFlatButton(
           text: "Skip",
-          onPress: () {},
+          onPress: () {
+            handleContinue();
+          },
         ))
       ],
     ));
