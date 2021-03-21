@@ -1,23 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:sport_app/layout.dart';
+import 'package:sport_app/models/league.dart';
 import 'package:sport_app/utils/responsive.dart';
 import 'package:sport_app/widgets/category-list.dart';
 import 'package:sport_app/widgets/match-card.dart';
 
+List<League> getLeagues() {
+  return ([
+    League(
+        name: "La Liga",
+        country: "Spain",
+        imagePath: 'assets/leagues/laliga.png'),
+    League(
+        name: "Premier League",
+        country: "Spain",
+        imagePath: 'assets/leagues/premier.png'),
+    League(
+        name: "La Liga",
+        country: "Spain",
+        imagePath: 'assets/leagues/laliga.png'),
+  ]);
+}
+
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    List<League> leagues = getLeagues();
     return (AppLayout(
         showBottomNav: true,
+        currentIndex: 1,
         child: SingleChildScrollView(
           child: Column(
             children: [
               _HomeHeading(),
               _HomeHeroImage(),
               CategoryList(),
-              LeagueItem(),
-              LeagueItem(),
-              LeagueItem(),
+              LeagueItem(league: leagues[0]),
+              LeagueItem(league: leagues[1]),
+              LeagueItem(league: leagues[2]),
             ],
           ),
         )));
@@ -25,6 +45,10 @@ class HomeScreen extends StatelessWidget {
 }
 
 class LeagueItem extends StatelessWidget {
+  final League league;
+
+  LeagueItem({required this.league});
+
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
@@ -44,18 +68,17 @@ class LeagueItem extends StatelessWidget {
                     Container(
                       width: 25,
                       margin: EdgeInsets.only(right: 10),
-                      child: Image.asset(
-                        'assets/leagues/laliga.png',
-                      ),
+                      child: Image.asset(league.imagePath),
                     ),
                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "La liga",
+                          league.name,
                           style: theme.textTheme.subtitle2,
                         ),
                         Text(
-                          "Spain ",
+                          league.country,
                           style: theme.textTheme.caption,
                         )
                       ],
