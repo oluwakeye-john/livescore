@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:sport_app/utils/responsive.dart';
-import 'package:sport_app/widgets/button.dart';
-import 'package:sport_app/widgets/input.dart';
-
-int modalBg = 0xFF222232;
+import 'package:sport_app/widgets/General/button.dart';
+import 'package:sport_app/widgets/General/input.dart';
 
 showLoginModal({required BuildContext context}) {
   showModalBottomSheet(
       context: context,
       builder: (BuildContext context) {
+        ThemeData theme = Theme.of(context);
         return Container(
           // height: 50,
           padding: EdgeInsets.all(20),
-          color: Color(modalBg),
+          color: theme.cardColor,
           child: Column(
             children: [
               _LoginTitle(),

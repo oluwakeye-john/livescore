@@ -4,10 +4,12 @@ import 'package:sport_app/theme/palette.dart';
 
 int primary = 0xFF246BFD;
 int pageBg = 0xFF181829;
+int modalBg = 0xFF222232;
 
 ThemeData getTheme() {
   return ThemeData(
       backgroundColor: Color(pageBg),
+      cardColor: Color(modalBg),
       primarySwatch: createMaterialColor(Color(primary)),
       textTheme: TextTheme(
           headline2: GoogleFonts.sourceSansPro(
@@ -30,6 +32,8 @@ ThemeData getTheme() {
             color: Colors.white,
             fontSize: 16,
           )),
+          headline6:
+              GoogleFonts.sourceSansPro(textStyle: TextStyle(fontSize: 14)),
           caption: GoogleFonts.sourceSansPro(
               textStyle: TextStyle(color: Color(0xFF65656B), fontSize: 16))));
 }

@@ -1,19 +1,80 @@
 import 'package:flutter/material.dart';
 import 'package:sport_app/layout.dart';
-import 'package:sport_app/models/category.dart';
 import 'package:sport_app/utils/responsive.dart';
+import 'package:sport_app/widgets/category-list.dart';
+import 'package:sport_app/widgets/match-card.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return (AppLayout(
-        child: Column(
-      children: [
-        _HomeHeading(),
-        _HomeHeroImage(),
-        _HomeSportList(),
-      ],
-    )));
+        showBottomNav: true,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              _HomeHeading(),
+              _HomeHeroImage(),
+              CategoryList(),
+              LeagueItem(),
+              LeagueItem(),
+              LeagueItem(),
+            ],
+          ),
+        )));
+  }
+}
+
+class LeagueItem extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    ThemeData theme = Theme.of(context);
+    return (Container(
+      padding: EdgeInsets.only(
+        top: getResponsiveHeight(context: context, height: 1),
+      ),
+      child: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.only(bottom: 8),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    Container(
+                      width: 25,
+                      margin: EdgeInsets.only(right: 10),
+                      child: Image.asset(
+                        'assets/leagues/laliga.png',
+                      ),
+                    ),
+                    Column(
+                      children: [
+                        Text(
+                          "La liga",
+                          style: theme.textTheme.subtitle2,
+                        ),
+                        Text(
+                          "Spain ",
+                          style: theme.textTheme.caption,
+                        )
+                      ],
+                    )
+                  ],
+                ),
+                IconButton(
+                    icon: Icon(
+                      Icons.chevron_right,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {})
+              ],
+            ),
+          ),
+          MatchCard()
+        ],
+      ),
+    ));
   }
 }
 
@@ -63,83 +124,9 @@ class _HomeHeroImage extends StatelessWidget {
       padding: EdgeInsets.only(
           top: getResponsiveHeight(context: context, height: 2),
           bottom: getResponsiveHeight(context: context, height: 2)),
-      child: Image.asset('assets/hero.png'),
+      child: Image.asset(
+        'assets/hero.png',
+      ),
     ));
-  }
-}
-
-List<Category> getCategories() {
-  return ([
-    Category(
-        name: "Soccer",
-        imagePath: "assets/categories/soccer.png",
-        starred: true),
-    Category(name: "Basketball", imagePath: "assets/categories/basketball.png"),
-    Category(name: "Football", imagePath: "assets/categories/football.png"),
-    Category(name: "Baseball", imagePath: "assets/categories/baseball.png"),
-    Category(name: "Tennis", imagePath: "assets/categories/tennis.png"),
-    Category(name: "Volleyball", imagePath: "assets/categories/basketball.png"),
-  ]);
-}
-
-class _HomeSportList extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    List<Category> categories = getCategories();
-    return (Container(
-      height: 120.0,
-      margin: EdgeInsets.only(
-          top: getResponsiveHeight(context: context, height: 2),
-          bottom: getResponsiveHeight(context: context, height: 2)),
-      child: ListView.builder(
-          itemCount: categories.length,
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (context, pos) {
-            return (_HomeSportCard(
-              category: categories[pos],
-            ));
-          }),
-    ));
-  }
-}
-
-class _HomeSportCard extends StatelessWidget {
-  final Category category;
-
-  _HomeSportCard({required this.category});
-
-  @override
-  Widget build(BuildContext context) {
-    ThemeData theme = Theme.of(context);
-
-    return (Container(
-        width: 120,
-        margin: EdgeInsets.only(right: 13.0),
-        decoration: BoxDecoration(
-          gradient: category.starred ? LinearGradient(
-            colors: [Color(0xFFF4A58A), Color(0xFFED6B4E)],
-            end: Alignment(0.96, 0),
-          ) : null,
-          borderRadius: BorderRadius.circular(10),
-          color: Color(0xFF222232),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Image.asset(
-              category.imagePath,
-              width: 40,
-              height: 40,
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 10),
-              child: Text(
-                category.name,
-                style: theme.textTheme.subtitle2,
-              ),
-            )
-          ],
-        )));
   }
 }

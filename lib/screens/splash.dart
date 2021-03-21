@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sport_app/layout.dart';
 import 'package:sport_app/utils/responsive.dart';
-import 'package:sport_app/widgets/button.dart';
+import 'package:sport_app/widgets/General/button.dart';
 import './login.dart';
 
 class SplashScreen extends StatelessWidget {

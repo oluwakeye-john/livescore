@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:sport_app/widgets/bottom-nav.dart';
 
 class AppLayout extends StatelessWidget {
   final Widget child;
+  final bool showBottomNav;
 
-  AppLayout({required this.child});
+  AppLayout({required this.child, this.showBottomNav = false});
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
 
     return (Scaffold(
       backgroundColor: theme.backgroundColor,
+      bottomNavigationBar: showBottomNav ? BottomNav() : null,
       body: SafeArea(
           child: Container(
         padding: EdgeInsets.only(left: 20, right: 20, top: 20),
