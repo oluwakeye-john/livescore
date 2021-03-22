@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sport_app/models/category.dart';
 import 'package:sport_app/utils/responsive.dart';
+import 'package:sport_app/widgets/General/gradient.dart';
 
 List<Category> getCategories() {
   return ([
@@ -50,12 +51,7 @@ class CategoryCard extends StatelessWidget {
         width: 120,
         margin: EdgeInsets.only(right: 13.0),
         decoration: BoxDecoration(
-          gradient: category.starred
-              ? LinearGradient(
-                  colors: [Color(0xFFF4A58A), Color(0xFFED6B4E)],
-                  end: Alignment(0.96, 0),
-                )
-              : null,
+          gradient: category.starred ? customGradient() : null,
           borderRadius: BorderRadius.circular(10),
           color: theme.cardColor,
         ),

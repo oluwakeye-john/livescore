@@ -47,6 +47,7 @@ flutter:
   assets:
     - assets/splash.png
     - assets/hero.png
+    - assets/lineup.png
 
     - assets/interests/basketball.png
     - assets/interests/football.png

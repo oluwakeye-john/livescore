@@ -78,22 +78,31 @@ class _MatchCardCenter extends StatelessWidget {
 class MatchCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return (Container(
-      height: 80,
-      margin: EdgeInsets.only(
-          bottom: getResponsiveHeight(context: context, height: 1.5)),
-      padding: EdgeInsets.only(left: 20),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10.0),
-        color: Color(0xFF2B2B3D),
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          _MatchCardLeft(),
-          _MatchCardCenter(),
-          _MatchCardRight(),
-        ],
+    handleDetails() {
+      Navigator.of(context).pushNamed('/match');
+    }
+
+    return (GestureDetector(
+      onTap: () {
+        handleDetails();
+      },
+      child: Container(
+        height: 80,
+        margin: EdgeInsets.only(
+            bottom: getResponsiveHeight(context: context, height: 1.5)),
+        padding: EdgeInsets.only(left: 20),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10.0),
+          color: Color(0xFF2B2B3D),
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            _MatchCardLeft(),
+            _MatchCardCenter(),
+            _MatchCardRight(),
+          ],
+        ),
       ),
     ));
   }

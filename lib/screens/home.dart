@@ -28,7 +28,7 @@ class HomeScreen extends StatelessWidget {
     List<League> leagues = getLeagues();
     return (AppLayout(
         showBottomNav: true,
-        currentIndex: 1,
+        currentIndex: 0,
         child: SingleChildScrollView(
           child: Column(
             children: [
