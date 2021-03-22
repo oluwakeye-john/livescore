@@ -48,6 +48,8 @@ flutter:
     - assets/splash.png
     - assets/hero.png
     - assets/lineup.png
+    - assets/explore1.png
+    - assets/explore2.png
 
     - assets/interests/basketball.png
     - assets/interests/football.png

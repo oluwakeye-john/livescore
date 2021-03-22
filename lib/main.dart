@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sport_app/screens/explore.dart';
 import 'package:sport_app/screens/home.dart';
 import 'package:sport_app/screens/interest.dart';
 import 'package:sport_app/screens/match-detail.dart';
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
         "/": (_) => SplashScreen(),
         "/interest": (_) => InterestScreen(),
         "/home": (_) => HomeScreen(),
-        '/match': (_) => MatchDetailScreen()
+        '/match': (_) => MatchDetailScreen(),
+        '/explore': (_) => ExploreScreen()
       },
       initialRoute: "/",
     ));
