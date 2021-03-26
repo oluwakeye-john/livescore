@@ -26,7 +26,9 @@ class AppLayout extends StatelessWidget {
       body: SafeArea(
           child: Container(
         padding: EdgeInsets.only(
-            left: useMargin ? 20 : 0, right: useMargin ? 20 : 0, top: 20),
+            left: useMargin ? 20 : 0,
+            right: useMargin ? 20 : 0,
+            top: useMargin ? 20 : 0),
         child: child,
       )),
     ));

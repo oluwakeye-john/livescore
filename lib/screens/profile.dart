@@ -16,6 +16,7 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return (AppLayout(
       showBottomNav: true,
+      currentIndex: 3,
       child: SingleChildScrollView(
         child: Column(
           children: [
