@@ -3,7 +3,7 @@ import 'package:sport_app/layout.dart';
 import 'package:sport_app/models/league.dart';
 import 'package:sport_app/utils/responsive.dart';
 import 'package:sport_app/widgets/category-list.dart';
-import 'package:sport_app/widgets/match-card.dart';
+import 'package:sport_app/widgets/match/match-card.dart';
 
 List<League> getLeagues() {
   return ([

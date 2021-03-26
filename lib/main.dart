@@ -3,6 +3,7 @@ import 'package:sport_app/screens/explore.dart';
 import 'package:sport_app/screens/home.dart';
 import 'package:sport_app/screens/interest.dart';
 import 'package:sport_app/screens/match-detail.dart';
+import 'package:sport_app/screens/profile.dart';
 import 'package:sport_app/screens/splash.dart';
 import 'package:sport_app/theme/index.dart';
 
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
         "/interest": (_) => InterestScreen(),
         "/home": (_) => HomeScreen(),
         '/match': (_) => MatchDetailScreen(),
-        '/explore': (_) => ExploreScreen()
+        '/explore': (_) => ExploreScreen(),
+        '/profile': (_) => ProfileScreen()
       },
       initialRoute: "/",
     ));

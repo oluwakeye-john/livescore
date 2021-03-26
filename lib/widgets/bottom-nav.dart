@@ -21,6 +21,9 @@ class BottomNav extends StatelessWidget {
         case 2:
           Navigator.of(context).pushNamed('/home');
           break;
+        case 3:
+          Navigator.of(context).pushNamed('/profile');
+          break;
       }
     }
 

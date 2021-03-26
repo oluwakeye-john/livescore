@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sport_app/layout.dart';
 import 'package:sport_app/utils/responsive.dart';
-import 'package:sport_app/widgets/match-tab.dart';
-import 'package:sport_app/widgets/match-card.dart';
+import 'package:sport_app/widgets/match/match-tab.dart';
+import 'package:sport_app/widgets/match/match-card.dart';
 
 class _MatchDetailHeader extends StatelessWidget {
   @override
