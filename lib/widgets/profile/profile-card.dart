@@ -8,7 +8,56 @@ class ProfileListCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    return (Container(
+    return (ListTile(
+      contentPadding: EdgeInsets.all(0),
+      title: Text(
+        item.title,
+        style: theme.textTheme.subtitle2,
+      ),
+      subtitle: Text(
+        item.description,
+        style: theme.textTheme.caption,
+      ),
+      leading: Icon(
+        item.icon,
+        color: Colors.white,
+        size: 23,
+      ),
+      trailing: Icon(
+        Icons.chevron_right,
+        color: Colors.white,
+        size: 23,
+      ),
+    ));
+  }
+}
+
+class NewListCard extends StatelessWidget {
+  final ProfileItem item;
+
+  NewListCard({required this.item});
+
+  @override
+  Widget build(BuildContext context) {
+    ThemeData theme = Theme.of(context);
+    return (Card(
+        child: ListTile(
+      title: Text(
+        item.title,
+        style: theme.textTheme.subtitle2,
+      ),
+      subtitle: Text(
+        item.description,
+        style: theme.textTheme.caption,
+      ),
+      leading: Icon(item.icon),
+    )));
+  }
+}
+
+/*
+
+Container(
       margin: EdgeInsets.only(top: 10, bottom: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -44,6 +93,5 @@ class ProfileListCard extends StatelessWidget {
               onPressed: () {})
         ],
       ),
-    ));
-  }
-}
+    )
+*/
