@@ -51,6 +51,7 @@ flutter:
     - assets/lineup.png
     - assets/explore1.png
     - assets/explore2.png
+    - assets/explore.png
 
     - assets/interests/basketball.png
     - assets/interests/football.png

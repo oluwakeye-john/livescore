@@ -5,9 +5,13 @@ class AppLayout extends StatelessWidget {
   final Widget child;
   final bool showBottomNav;
   final int currentIndex;
+  final bool useMargin;
 
   AppLayout(
-      {required this.child, this.showBottomNav = false, this.currentIndex = 0});
+      {required this.child,
+      this.showBottomNav = false,
+      this.currentIndex = 0,
+      this.useMargin = true});
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
@@ -21,7 +25,8 @@ class AppLayout extends StatelessWidget {
           : null,
       body: SafeArea(
           child: Container(
-        padding: EdgeInsets.only(left: 20, right: 20, top: 20),
+        padding: EdgeInsets.only(
+            left: useMargin ? 20 : 0, right: useMargin ? 20 : 0, top: 20),
         child: child,
       )),
     ));

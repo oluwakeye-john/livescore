@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sport_app/screens/article.dart';
 import 'package:sport_app/screens/explore.dart';
 import 'package:sport_app/screens/home.dart';
 import 'package:sport_app/screens/interest.dart';
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
         "/home": (_) => HomeScreen(),
         '/match': (_) => MatchDetailScreen(),
         '/explore': (_) => ExploreScreen(),
-        '/profile': (_) => ProfileScreen()
+        '/profile': (_) => ProfileScreen(),
+        '/article': (_) => ArticleDetail()
       },
       initialRoute: "/",
     ));

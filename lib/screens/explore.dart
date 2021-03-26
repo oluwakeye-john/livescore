@@ -43,7 +43,6 @@ class ExploreScreen extends StatelessWidget {
           children: [
             _ExploreInput(),
             Container(
-              // margin: EdgeInsets.only(left: 10),
               child: Expanded(
                   child: ListView.builder(
                       itemCount: explores.length,
@@ -123,7 +122,9 @@ class _ExploreCard extends StatelessWidget {
             )),
             IconButton(
                 icon: Icon(Icons.bookmark_border_outlined, color: hintText),
-                onPressed: () {})
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/article');
+                })
           ],
         ),
       ),
