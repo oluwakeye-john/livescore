@@ -1,10 +1,12 @@
-# sport_app
+# LiveScore
 
-A new Flutter project.
+Livescore is a mobile sport application built with flutter.
 
 ![Home](./docs/home.png)
-![Home](./docs/splash.png)
-![Home](./docs/login.png)
-![Home](./docs/category.png)
-![Home](./docs/match-detail.png)
-![Home](./docs/article.png)
+![Splash](./docs/splash.png)
+![Login](./docs/login.png)
+![Category](./docs/category.png)
+![Match-Detail](./docs/match-detail.png)
+![Article](./docs/article.png)
+
+By Oluwakeye John
