@@ -93,10 +93,16 @@ class _ExploreCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
+    handleClick() {
+      Navigator.of(context).pushNamed('/article');
+    }
+
     return (Container(
       margin: EdgeInsets.only(bottom: 32),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          handleClick();
+        },
         child: Row(
           children: [
             ClipRRect(
@@ -123,7 +129,7 @@ class _ExploreCard extends StatelessWidget {
             IconButton(
                 icon: Icon(Icons.bookmark_border_outlined, color: hintText),
                 onPressed: () {
-                  Navigator.of(context).pushNamed('/article');
+                  handleClick();
                 })
           ],
         ),
